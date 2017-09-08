@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using System.Web.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.Search;
 using SitecoreReleaseNotes.Core.Search;
 
 namespace SitecoreReleaseNotes.Web.Controllers
 {
-    [RoutePrefix("api")]
-    public class SearchApiController : ApiController
+    [Route("api")]
+    public class SearchApiController : Controller
     {
         // TODO: Interface
         private ReleaseNotesSearchClient SearchClient { get; }
@@ -22,12 +22,6 @@ namespace SitecoreReleaseNotes.Web.Controllers
 
             SearchClient = new ReleaseNotesSearchClient(azureSearchClient);
         }
-
-        public SearchApiController(ReleaseNotesSearchClient searchClient)
-        {
-            SearchClient = searchClient;
-        }
-
 
         // TODO: Filters etc.
         [HttpGet]

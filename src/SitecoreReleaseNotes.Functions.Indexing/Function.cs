@@ -1,25 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
+using System;
 using System.Threading.Tasks;
-using Microsoft.Azure.Search;
 using Microsoft.Azure.WebJobs;
+using Microsoft.Azure.WebJobs.Host;
+using Microsoft.Azure.Search;
 using SitecoreReleaseNotes.Core.Indexing;
 
-namespace SitecoreReleaseNotes.Jobs.Indexing
+namespace SitecoreReleaseNotes.Functions.Indexing
 {
-    public static class Functions
+    public static class Function
     {
-        [NoAutomaticTrigger]
-        public static Task ManualTrigger(TextWriter log)
+        [FunctionName("Indexing")]
+        public static Task Run([TimerTrigger("0 0 3 */1 * *")]TimerInfo myTimer, TraceWriter log)
         {
+            log.Info($"C# Timer trigger function executed at: {DateTime.Now}");
+
             // TODO: Move to config or something
             var serviceName = "sitecore-release-notes";
             var adminKey = "***REMOVED***";
 
-            log.WriteLine("Beginning indexing of release notes");
+            log.Info("Beginning indexing of release notes");
 
             var searchService = new SearchServiceClient(serviceName, new SearchCredentials(adminKey));
             var crawler = new ReleaseNotesCrawler();
