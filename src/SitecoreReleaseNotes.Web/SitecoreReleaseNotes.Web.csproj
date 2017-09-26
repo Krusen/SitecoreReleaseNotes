@@ -2,60 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <UserSecretsId>96665048-56c4-4a53-9e5f-1a80ac02cdb9</UserSecretsId>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Content Include="Content\scss\components\date_picker\_default.date.scss" />
-    <Content Include="Content\scss\components\date_picker\_default.scss" />
-    <Content Include="Content\scss\components\date_picker\_default.time.scss" />
-    <Content Include="Content\scss\components\forms\_checkboxes.scss" />
-    <Content Include="Content\scss\components\forms\_file-input.scss" />
-    <Content Include="Content\scss\components\forms\_forms.scss" />
-    <Content Include="Content\scss\components\forms\_input-fields.scss" />
-    <Content Include="Content\scss\components\forms\_radio-buttons.scss" />
-    <Content Include="Content\scss\components\forms\_range.scss" />
-    <Content Include="Content\scss\components\forms\_select.scss" />
-    <Content Include="Content\scss\components\forms\_switches.scss" />
-    <Content Include="Content\scss\components\_badges.scss" />
-    <Content Include="Content\scss\components\_buttons.scss" />
-    <Content Include="Content\scss\components\_cards.scss" />
-    <Content Include="Content\scss\components\_carousel.scss" />
-    <Content Include="Content\scss\components\_chips.scss" />
-    <Content Include="Content\scss\components\_collapsible.scss" />
-    <Content Include="Content\scss\components\_color.scss" />
-    <Content Include="Content\scss\components\_dropdown.scss" />
-    <Content Include="Content\scss\components\_global.scss" />
-    <Content Include="Content\scss\components\_grid.scss" />
-    <Content Include="Content\scss\components\_icons-material-design.scss" />
-    <Content Include="Content\scss\components\_materialbox.scss" />
-    <Content Include="Content\scss\components\_mixins.scss" />
-    <Content Include="Content\scss\components\_modal.scss" />
-    <Content Include="Content\scss\components\_navbar.scss" />
-    <Content Include="Content\scss\components\_normalize.scss" />
-    <Content Include="Content\scss\components\_prefixer.scss" />
-    <Content Include="Content\scss\components\_preloader.scss" />
-    <Content Include="Content\scss\components\_pulse.scss" />
-    <Content Include="Content\scss\components\_roboto.scss" />
-    <Content Include="Content\scss\components\_sideNav.scss" />
-    <Content Include="Content\scss\components\_slider.scss" />
-    <Content Include="Content\scss\components\_table_of_contents.scss" />
-    <Content Include="Content\scss\components\_tabs.scss" />
-    <Content Include="Content\scss\components\_tapTarget.scss" />
-    <Content Include="Content\scss\components\_toast.scss" />
-    <Content Include="Content\scss\components\_tooltip.scss" />
-    <Content Include="Content\scss\components\_transitions.scss" />
-    <Content Include="Content\scss\components\_typography.scss" />
-    <Content Include="Content\scss\components\_variables.scss" />
-    <Content Include="Content\scss\components\_waves.scss" />
-    <Content Include="Content\scss\materialize.css" />
-    <Content Include="Content\scss\materialize.min.css" />
-    <Content Include="Content\scss\materialize.scss" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="wwwroot\" />
-    <Folder Include="wwwroot\css\" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
@@ -66,7 +14,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.Extensions.SecretManager.Tools" Version="2.0.0" />
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\SitecoreReleaseNotes.Core\SitecoreReleaseNotes.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Pages\" />
   </ItemGroup>
 
 </Project>

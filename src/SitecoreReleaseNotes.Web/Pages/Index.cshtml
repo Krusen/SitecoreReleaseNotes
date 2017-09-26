@@ -1,4 +1,7 @@
-﻿
+﻿@page
+@using SitecoreReleaseNotes.Web.Pages
+@model IndexModel
+
 @{
     Layout = null;
 }
@@ -15,7 +18,7 @@
     <!--Import Google Icon Font-->
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="/css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="/css/materialize.min.css" media="screen,projection" />
 
     <style>
         [v-cloak] {
@@ -26,9 +29,9 @@
             background-color: #FFFAAA;
         }
 
-         .header {
-             height: 300px;
-         }
+        .header {
+            height: 300px;
+        }
 
         .input, input[type=text] {
             border-bottom-color: rgba(255, 255, 255, 0.8);
@@ -52,7 +55,6 @@
         }
 
         .card .card-sub-title {
-
             margin-bottom: 15px;
         }
 
@@ -69,7 +71,6 @@
             background-image: url('/Content/images/kindajean.png');
             /*background-image: url('/Content/images/debut_light.png');*/
         }
-
     </style>
 </head>
 <body>
@@ -87,7 +88,7 @@
                 <div class="row">
                     <div class="input-field col s8 m7 offset-m2 l5 offset-l3 white-text">
                         <i class="material-icons prefix">search</i>
-                        <input type="text" v-model.trim="query" @@keyup.enter="search"/>
+                        <input type="text" v-model.trim="query" @@keyup.enter="search" />
                     </div>
                     <div class="col s1">
                         <button class="waves-effect btn white grey-text text-darken-3 button-search" @@click="search">Search</button>
