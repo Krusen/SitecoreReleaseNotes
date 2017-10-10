@@ -89,7 +89,7 @@ namespace SitecoreReleaseNotes.Core.Indexing
             html = await Client.GetHtmlAsync(releaseNotesUrl);
 
             var releaseNotes = html.QuerySelector(".topic-content").InnerText;
-            var issueNumbers = GetIssueNumbers(releaseNotes);
+            var issueNumbers = GetIssueNumbers(releaseNotes).SortAsIntegers().ToList();
 
             // Add '.' after issue numbers (in tables)
             // Workaround for Azure Search Highlighting returning long snippets
