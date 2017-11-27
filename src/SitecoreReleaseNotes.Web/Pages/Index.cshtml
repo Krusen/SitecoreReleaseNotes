@@ -97,6 +97,16 @@
             font-family: "Open Sans", sans-serif;
         }
 
+        ul {
+            margin-bottom: 0;
+            padding-left: 20px;
+            list-style-type: square;
+        }
+
+        li {
+            margin: 5px 0;
+        }
+
         .issue-numbers {
             line-height: 36px;
         }
@@ -151,13 +161,15 @@
                             <span class="card-sub-title grey-text">
                                 {{ item.sortableVersion }}
                             </span>
-                            <p v-for="content in item.content" v-html="content"></p>
+                            <ul class="browser-default">
+                                <li v-for="content in item.content" v-html="content"></li>
+                            </ul>
                         </div>
                         <div class="card-action right-align">
                             <div class="right-align">
                                 <span class="left issue-numbers">
                                     <i class="material-icons teal-text">check</i>
-                                    {{item.issueNumbers.length}} issue numbers resolved
+                                    <b>{{item.issueNumbers.length}}</b> issue numbers resolved
                                 </span>
                                 <a class="waves-effect waves-light btn-flat blue-grey-text" :href="'https://dev.sitecore.net' + item.releaseUrl">
                                     Release Page
