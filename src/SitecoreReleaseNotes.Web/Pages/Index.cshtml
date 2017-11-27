@@ -115,6 +115,15 @@
             font-size: 1.5rem;
             vertical-align: sub;
         }
+
+        a.release-notes {
+            padding: 0 20px;
+        }
+
+        a.release-page {
+            margin-right: 12px !important;
+            padding: 0 10px;
+        }
     </style>
 
 </head>
@@ -171,10 +180,10 @@
                                     <i class="material-icons teal-text">check</i>
                                     <b>{{item.issueNumbers.length}}</b> issue numbers resolved
                                 </span>
-                                <a class="waves-effect waves-light btn-flat blue-grey-text" :href="'https://dev.sitecore.net' + item.releaseUrl">
+                                <a class="waves-effect waves-light btn-flat blue-grey-text release-page" :href="'https://dev.sitecore.net' + item.releaseUrl">
                                     Release Page
                                 </a>
-                                <a class="waves-effect waves-light btn" :href="item.releaseNotesUrl">
+                                <a class="waves-effect waves-light btn release-notes" :href="item.releaseNotesUrl">
                                     Release Notes
                                 </a>
                             </div>
