@@ -110,10 +110,10 @@
                 <div class="row">
                     <div class="input-field col s8 m7 offset-m2 l5 offset-l3 white-text">
                         <i class="material-icons prefix">search</i>
-                        <input type="text" v-model.trim="query" @@keyup.enter="search" />
+                        <input type="text" v-model.trim="query" @@keyup.enter="search" placeholder="Search for issue numbers etc." />
                     </div>
                     <div class="col s1">
-                        <button class="waves-effect btn white grey-text text-darken-3 button-search" @@click="search">Search</button>
+                        <button class="waves-effect btn white grey-text text-darken-3 button-search" @@click="search" :disabled="searching">Search</button>
                     </div>
                 </div>
             </div>
@@ -204,6 +204,9 @@
             },
             methods: {
                 search() {
+                    if (!this.query)
+                        return;
+
                     this.searching = true;
                     this.$http.get("/api/search?query=" + this.query).then(response => {
                         vm.searching = false;
