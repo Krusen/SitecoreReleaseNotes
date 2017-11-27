@@ -95,6 +95,15 @@
         h1 {
             font-family: "Open Sans", sans-serif;
         }
+
+        .issue-numbers {
+            line-height: 36px;
+        }
+
+        .issue-numbers .material-icons {
+            font-size: 1.5rem;
+            vertical-align: sub;
+        }
     </style>
 
 </head>
@@ -136,11 +145,16 @@
                             <span class="card-title">{{ item.title }}</span>
                             <span class="card-sub-title grey-text">{{ item.sortableVersion }}</span>
                             <p v-for="content in item.content" v-html="content"></p>
-                            <p><b>Issue numbers:</b> {{ item.issueNumbers.join(", ") }}</p>
                         </div>
                         <div class="card-action right-align">
-                            <a class="waves-effect waves-light btn-flat blue-grey-text" :href="'https://dev.sitecore.net' + item.releaseUrl">Release Page</a>
-                            <a class="waves-effect waves-light btn cyan teal" :href="item.releaseNotesUrl">Release Notes</a>
+                            <div class="right-align">
+                                <span class="left issue-numbers">
+                                    <i class="material-icons teal-text">check</i>
+                                    {{item.issueNumbers.length}} issue numbers resolved
+                                </span>
+                                <a class="waves-effect waves-light btn-flat blue-grey-text" :href="'https://dev.sitecore.net' + item.releaseUrl">Release Page</a>
+                                <a class="waves-effect waves-light btn cyan teal" :href="item.releaseNotesUrl">Release Notes</a>
+                            </div>
                         </div>
                     </div>
                 </div>
