@@ -31,8 +31,7 @@
         highlight {
             background-color: #FFFAAA;
             display: inline-block;
-            padding: 0px 3px;
-            margin: 0px -3px;
+            padding: 2px;
         }
 
         .header {
@@ -121,48 +120,8 @@
 
         <div class="container">
             <div class="row" v-show="searching" v-cloak>
-                <div class="col s12 center-align">
-                    <div class="preloader-wrapper big active">
-                        <div class="spinner-layer spinner-blue">
-                            <div class="circle-clipper left">
-                                <div class="circle"></div>
-                            </div><div class="gap-patch">
-                                <div class="circle"></div>
-                            </div><div class="circle-clipper right">
-                                <div class="circle"></div>
-                            </div>
-                        </div>
-
-                        <div class="spinner-layer spinner-red">
-                            <div class="circle-clipper left">
-                                <div class="circle"></div>
-                            </div><div class="gap-patch">
-                                <div class="circle"></div>
-                            </div><div class="circle-clipper right">
-                                <div class="circle"></div>
-                            </div>
-                        </div>
-
-                        <div class="spinner-layer spinner-yellow">
-                            <div class="circle-clipper left">
-                                <div class="circle"></div>
-                            </div><div class="gap-patch">
-                                <div class="circle"></div>
-                            </div><div class="circle-clipper right">
-                                <div class="circle"></div>
-                            </div>
-                        </div>
-
-                        <div class="spinner-layer spinner-green">
-                            <div class="circle-clipper left">
-                                <div class="circle"></div>
-                            </div><div class="gap-patch">
-                                <div class="circle"></div>
-                            </div><div class="circle-clipper right">
-                                <div class="circle"></div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="progress">
+                    <div class="indeterminate"></div>
                 </div>
             </div>
 
@@ -177,7 +136,7 @@
                         </div>
                         <div class="card-action right-align">
                             <a class="waves-effect waves-light btn-flat blue-grey-text" :href="'https://dev.sitecore.net' + item.releaseUrl">Release Page</a>
-                            <a class="waves-effect waves-light btn blue" :href="item.releaseNotesUrl">Release Notes</a>
+                            <a class="waves-effect waves-light btn cyan teal" :href="item.releaseNotesUrl">Release Notes</a>
                         </div>
                     </div>
                 </div>
