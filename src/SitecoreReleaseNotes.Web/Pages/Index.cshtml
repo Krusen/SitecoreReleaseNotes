@@ -69,8 +69,9 @@
             top: 5px;
         }
 
-        .card .card-title {
+        .card .card-content .card-title {
             font-weight: 400;
+            margin-bottom: 0;
         }
 
         .card .card-sub-title {
@@ -140,10 +141,16 @@
 
             <div class="row" v-show="!searching">
                 <div class="col s12">
-                    <div class="card hoverable" v-for="item in results">
+                    <div class="card" v-for="item in results">
                         <div class="card-content">
-                            <span class="card-title">{{ item.title }}</span>
-                            <span class="card-sub-title grey-text">{{ item.sortableVersion }}</span>
+                            <span class="card-title">
+                                <a class="black-text" :href="'https://dev.sitecore.net' + item.releaseUrl">
+                                    {{ item.title }}
+                                </a>
+                            </span>
+                            <span class="card-sub-title grey-text">
+                                {{ item.sortableVersion }}
+                            </span>
                             <p v-for="content in item.content" v-html="content"></p>
                         </div>
                         <div class="card-action right-align">
@@ -152,8 +159,12 @@
                                     <i class="material-icons teal-text">check</i>
                                     {{item.issueNumbers.length}} issue numbers resolved
                                 </span>
-                                <a class="waves-effect waves-light btn-flat blue-grey-text" :href="'https://dev.sitecore.net' + item.releaseUrl">Release Page</a>
-                                <a class="waves-effect waves-light btn cyan teal" :href="item.releaseNotesUrl">Release Notes</a>
+                                <a class="waves-effect waves-light btn-flat blue-grey-text" :href="'https://dev.sitecore.net' + item.releaseUrl">
+                                    Release Page
+                                </a>
+                                <a class="waves-effect waves-light btn" :href="item.releaseNotesUrl">
+                                    Release Notes
+                                </a>
                             </div>
                         </div>
                     </div>
