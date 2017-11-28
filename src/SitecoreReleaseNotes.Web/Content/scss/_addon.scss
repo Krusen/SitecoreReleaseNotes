@@ -71,6 +71,26 @@ ul {
             margin: 10px 0;
         }
     }
+
+    .card-action {
+        .issue-numbers {
+            line-height: 36px;
+
+            .material-icons {
+                font-size: 1.4rem;
+                vertical-align: sub;
+            }
+        }
+
+        .release-notes {
+            padding: 0 20px;
+        }
+
+        .release-page {
+            margin-right: 12px !important;
+            padding: 0 10px;
+        }
+    }
 }
 
 highlight {
@@ -81,24 +101,8 @@ highlight {
 
 .button-search {
     margin-top: 20px;
-}
 
-.issue-numbers {
-    line-height: 36px;
-
-    .material-icons {
-        font-size: 1.5rem;
-        vertical-align: sub;
-    }
-}
-
-a {
-    .release-notes {
-        padding: 0 20px;
-    }
-
-    .release-page {
-        margin-right: 12px !important;
-        padding: 0 10px;
+    &:hover {
+        background-color: #ebebeb !important;
     }
 }
