@@ -1,0 +1,104 @@
+﻿body {
+    font-family: "Roboto", sans-serif;
+    /*background-image: url('/images/agsquare.png');*/
+    /*background-image: url('/images/kindajean.png');*/
+    background-image: url('/images/debut_light.png');
+}
+
+h1 {
+    font-family: "Open Sans", sans-serif;
+}
+
+ul {
+    margin-bottom: 0;
+    padding-left: 20px;
+    list-style-type: square;
+
+    li {
+        margin: 5px 0;
+    }
+}
+
+.header {
+    height: 300px;
+    background-color: #83222b;
+    /*background-image: url("/images/backgrounds/abstract-orange-texture.jpg");*/
+    /*background-image: url("/images/backgrounds/abstract-orange-texture-3.jpg");*/
+    /*background-image: url("/images/backgrounds/knot.jpg");*/
+    /*background-image: url("/images/backgrounds/red-things.jpg");*/
+    /*background-image: url("/images/backgrounds/spray.jpg");*/
+    /*background-image: url("/images/backgrounds/grey-pattern.jpg");*/
+    /*background-image: url("/images/backgrounds/minimalist-black.jpg");*/
+    background-image: url("/images/backgrounds/abstract-orange-texture-2.jpg");
+    background-size: cover;
+
+    h1 {
+        text-shadow: #1d1d1d 0px 0px 15px;
+    }
+}
+
+.input, input[type=text] {
+    border-bottom-color: rgba(255, 255, 255, 0.8);
+}
+
+.input-field {
+    input[type=text]:focus {
+        border-bottom: 1px solid white;
+        box-shadow: 0 1px 0 0 white;
+    }
+
+    .prefix {
+        top: 8px;
+
+        &.active {
+            color: white;
+        }
+    }
+}
+
+.card {
+    .card-content {
+        .card-title {
+            font-weight: 400;
+            margin-bottom: 0;
+        }
+
+        .card-sub-title {
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+    }
+}
+
+highlight {
+    background-color: #FFFAAA;
+    display: inline-block;
+    padding: 2px;
+}
+
+.button-search {
+    margin-top: 20px;
+}
+
+.issue-numbers {
+    line-height: 36px;
+
+    .material-icons {
+        font-size: 1.5rem;
+        vertical-align: sub;
+    }
+}
+
+a {
+    .release-notes {
+        padding: 0 20px;
+    }
+
+    .release-page {
+        margin-right: 12px !important;
+        padding: 0 10px;
+    }
+}
