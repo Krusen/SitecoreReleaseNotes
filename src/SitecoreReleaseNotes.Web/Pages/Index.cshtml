@@ -11,7 +11,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
 
-    <title>Sitecore Release Notes Search</title>
+    <title>Sitecore Release Notes</title>
 
     <!-- CSS  -->
     <!--Import Google Icon Font-->
@@ -20,7 +20,6 @@
     <link type="text/css" rel="stylesheet" href="/css/materialize.min.css" media="screen,projection" />
 
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open%20Sans">
-
 
     <style>
         [v-cloak] {
@@ -106,54 +105,6 @@
     <script src="https://unpkg.com/vue-router"></script>
     <script src="https://unpkg.com/vue-resource@1.2.1/dist/vue-resource.min.js"></script>
 
-    <script>
-
-        window.onpopstate = function (event) {
-            vm.query = event.state.query;
-            vm.results = event.state.results;
-        };
-
-        var router = new VueRouter({
-            mode: "history",
-            routes: []
-        });
-
-        var vm = new Vue({
-            router,
-            el: "#app",
-            data: {
-                searching: false,
-                query: "",
-                results: []
-            },
-            mounted: function () {
-                if (!!this.$route.query.q) {
-                    this.query = this.$route.query.q;
-                    this.search();
-                }
-            },
-            methods: {
-                search() {
-                    if (!this.query)
-                        return;
-
-                    this.searching = true;
-                    this.$http.get("/api/search?query=" + this.query).then(response => {
-                        vm.searching = false;
-                        response.json().then(json => {
-                            vm.results = json;
-
-                            var state = {
-                                results: this.results,
-                                query: this.query
-                            };
-
-                            history.pushState(state, null, "?q=" + this.query);
-                        });
-                    });
-                }
-            }
-        });
-    </script>
+    <script src="/js/script.js"></script>
 </body>
 </html>
