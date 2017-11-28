@@ -292,5 +292,4 @@ tools/**
 
 /coverage.xml
 secrets.json
-/src/SimRacerCentral.Web/wwwroot/css/main.min.css
-/src/SimRacerCentral.Web/wwwroot/css/main.css
+/src/SitecoreReleaseNotes.Web/wwwroot/css/*
