@@ -27,6 +27,8 @@ var vm = new Vue({
             if (!this.query)
                 return;
 
+            gtag("event", "search", { search_term: this.query });
+
             this.searching = true;
             this.$http.get("/api/search?query=" + this.query).then(response => {
                 vm.searching = false;
