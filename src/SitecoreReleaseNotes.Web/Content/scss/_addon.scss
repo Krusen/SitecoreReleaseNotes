@@ -40,9 +40,15 @@ ul {
     }
 
     a {
+        display: inline-block;
         margin: 0 5px;
         font-size: 1.4rem;
         color: white;
+        transition: all 0.2s ease-out;
+
+        &:hover {
+            transform: scale(1.2);
+        }
     }
 }
 
