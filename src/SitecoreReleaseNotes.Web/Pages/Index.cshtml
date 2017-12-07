@@ -70,20 +70,17 @@
                         <div class="input-field col s8 m7 offset-m2 l5 offset-l3 white-text">
                             <i class="material-icons prefix">search</i>
                             <input type="text" v-model.trim="query" @@keyup.enter="search" placeholder="Search for issue numbers etc." />
+                            <div class="progress-bar" v-show="searching" v-cloak>
+                                <div class="progress">
+                                    <div class="indeterminate"></div>
+                                </div>
+                            </div>
                         </div>
                         <div class="col s1">
                             <button class="waves-effect btn white grey-text text-darken-3 button-search" @@click="search" :disabled="searching">Search</button>
                         </div>
                     </div>
                 </transition>
-            </div>
-        </div>
-
-        <div class="progress-bar" v-show="searching" v-cloak>
-            <div class="col s12 xl10 offset-xl1">
-                <div class="progress">
-                    <div class="indeterminate"></div>
-                </div>
             </div>
         </div>
 

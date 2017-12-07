@@ -117,9 +117,17 @@ highlight {
 }
 
 .progress-bar {
-    position: fixed;
-    top: 290px;
+    position: absolute;
+    top: 34px;
     width: 100%;
+    padding-left: 40px;
+    padding-right: 20px;
+
+    @media (min-width: 1200px) {
+        top: 37px;
+        padding-left: 45px;
+        padding-right: 22px;
+    }
 }
 
 .slide-enter-active {
