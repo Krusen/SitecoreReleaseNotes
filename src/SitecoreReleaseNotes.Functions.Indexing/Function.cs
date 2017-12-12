@@ -1,4 +1,5 @@
 using System;
+using System.Configuration;
 using System.Threading.Tasks;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Host;
@@ -14,9 +15,8 @@ namespace SitecoreReleaseNotes.Functions.Indexing
         {
             log.Info($"C# Timer trigger function executed at: {DateTime.Now}");
 
-            // TODO: Move to config or something
-            var serviceName = "sitecore-release-notes";
-            var adminKey = "***REMOVED***";
+            var serviceName = ConfigurationManager.AppSettings["AzureSearch:ServiceName"];
+            var adminKey = ConfigurationManager.AppSettings["AzureSearch:AdminApiKey"];
 
             log.Info("Beginning indexing of release notes");
 
