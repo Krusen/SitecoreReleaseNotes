@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.Search;
+using SitecoreReleaseNotes.Core;
 using SitecoreReleaseNotes.Core.Search;
 
 namespace SitecoreReleaseNotes.Web.Controllers
@@ -12,13 +13,10 @@ namespace SitecoreReleaseNotes.Web.Controllers
         // TODO: Interface
         private ReleaseNotesSearchClient SearchClient { get; }
 
-        // TODO: Remove and use dependency injection
-        public SearchApiController()
+        public SearchApiController(AzureSearchSettings settings)
         {
-            // TODO: Store settings somewhere else
-            var credentials = new SearchCredentials("***REMOVED***");
-            // TODO: Use constants instead
-            var azureSearchClient = new SearchIndexClient("sitecore-release-notes", "release-notes", credentials);
+            var credentials = new SearchCredentials(settings.ApiKey);
+            var azureSearchClient = new SearchIndexClient(settings.ServiceName, settings.IndexName, credentials);
 
             SearchClient = new ReleaseNotesSearchClient(azureSearchClient);
         }

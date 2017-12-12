@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using SitecoreReleaseNotes.Core;
 
 namespace SitecoreReleaseNotes.Web
 {
@@ -19,6 +20,8 @@ namespace SitecoreReleaseNotes.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
+
+            services.AddSingleton(Configuration.GetSection("AzureSearch").Get<AzureSearchSettings>());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
